@@ -1,0 +1,89 @@
+/* styles.css */
+
+/* Paleta de colores */
+:root {
+    --primary-color: #f8bbd0; /* Rosa palo */
+    --secondary-color: #f06292;
+    --accent-color: #ec407a;
+    
+}
+html{
+    font-family:  Arial, sans-serif;
+    
+    
+
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.botBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    font-family:  Arial, sans-serif;
+    background-color: rgb(117, 117, 117);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+.backBtn{
+    margin: 0 2rem;
+    font-size: 2.5rem;
+    
+}
+.backBtn a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.backBtn a:hover{
+    cursor: pointer;
+}
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(90, 90, 90);
+    height: 100vh;
+    width: 100vw;
+}
+.topBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    font-family:  Arial, sans-serif;
+    background-color: rgb(117, 117, 117);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.HomeTitulo h1{
+    font-size: 5rem;  
+    margin: 0;
+    color: whitesmoke;
+    padding: 2rem;
+}
+
+  /* Estilos específicos para móviles */
+  @media screen and (max-width: 600px) {
+    .main {
+      
+      max-width: 500px;
+      width: 85%;
+      margin: 2rem auto;
+      text-align: center;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  .bi{
+    font-size: 5rem;
+  }
+  .bi-card-checklist{
+    color: white;
+  }
