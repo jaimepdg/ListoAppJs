@@ -5,4 +5,28 @@
         <div class="backBtn"><a href="#/"><i class="bi bi-arrow-left"></i></a></div>
     </div>
     
+
+
+    <div class="mainContainer">
+        <ul>
+            <li ng-repeat="item in listItems">{{ item }}</li>
+          </ul>
+          
+        <div ng-click="addNewItem()" ng-show="showAddBtn">
+            <i class="bi bi-plus-circle-fill"></i>
+        </div>
+
+        <div class="formNewItem" ng-show="showNewItem">
+            <p>Añadir item:</p>
+            <input type="text" ng-model="newItemText">
+            <div class="newItemButtons">
+                <div class="bi bi-x-circle" ng-click="cancelNewItem()"></div>
+                <div class="bi bi-check-circle" ng-click="saveNewItem()"></div>
+                
+            </div>
+            
+          </div>
+          
+    </div>
+
 </div>
