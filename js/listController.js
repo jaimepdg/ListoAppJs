@@ -1,4 +1,4 @@
-app.controller('listController', function($scope, myService) {
+app.controller('listController', function($scope, myService, $location) {
 
     
     myService.setVariable('Lista');
@@ -28,4 +28,7 @@ $scope.cancelNewItem = function() {
   $scope.showAddBtn = true
 };
 
+$scope.goTo = function(ruta){
+    $location.path(ruta);
+};
 });
