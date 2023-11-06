@@ -1,18 +1,16 @@
 
-<div ng-controller = "listoHomeController">
+<div ng-controller = "listoSettingsController">
     <div class="topBar">
         <div class="HomeTitulo"><h1>{{title}}</h1></div>
-        <i class="bi bi-plus-circle-fill hAddBtn" ng-click = "goTo('/newGame')"></i>
+        <div class="backBtn"><a href="#/"><i class="bi bi-arrow-left"></i></a></div>
     </div>
     <div class="mainContainer">
-    
-        <ul>
-            <li ng-repeat = "juego in juegos">
-                <h1>{{juego.nombreJuego}}</h1>
-                <p>Jugadores: {{juego.jugadores}}</p>
-                <p>Solitario: {{juego.solitario}}</p>
-                <p>Tiempo: {{juego.tiempo}}</p>
-            </li>
+        
+        <ul class="sLista">
+            <li><i class="bi bi-tags-fill"></i> Categorías </li>
+            <li><i class="bi bi-pencil-fill"></i>  Editar Juego </li>
+            <li><i class="bi bi-star-fill"></i>  Puntuaciones </li>
+            
         </ul>
 
     </div>
@@ -22,7 +20,7 @@
             <div class="btnLista" ng-click ="goTo('/list')">
                 <i class="bi bi-card-checklist"></i>
             </div>
-            <div class="btnHome" ng-click ="goTo('#/')">
+            <div class="btnHome" ng-click ="goTo('/')">
                 <i class="bi bi-house"></i>
             </div>
             <div class="btnSettigns" ng-click ="goTo('/settings')">

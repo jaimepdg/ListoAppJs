@@ -1,0 +1,49 @@
+
+<div ng-controller = "newGameFormController">
+    <div class="topBar">
+        <div class="HomeTitulo"><h1>{{title}}</h1></div>
+        <div class="backBtn"><a href="#/"><i class="bi bi-arrow-left"></i></a></div>
+    </div>
+    
+
+
+    <div class="mainContainer">
+        <div class="newForm">
+            <div class="newFormItem">
+                Nombre
+                <input ng-model = "nombre" ng-model = "nombrejuego" type="text">
+            </div>
+            <div class="newFormItem">
+                Nº Jugadores {{njugadores}}
+                <input ng-model="njugadores" ng-change ="getSliderValue()"  type="range" min="1" max="20" value="1">
+            </div><div class="newFormItem">
+                Duración
+                <input ng-model = "tiempo" type="number" placeholder="Minutos">
+            </div>
+            <div class="newFormItem">
+                <div>Solitario <input ng-model = "solitario"  type="checkbox"></div>
+            </div>
+            <div ng-click="addJuego()"class="newBtnGuardar">Guardar</div>
+        </div>
+            
+        
+        </div>
+          
+    </div>
+
+    <div class="navBar">
+        <div class="btnContainer">
+            <div class="btnLista" ng-click ="goTo('/list')">
+                <i class="bi bi-card-checklist"></i>
+            </div>
+            <div class="btnHome" ng-click ="goTo('#/')">
+                <i class="bi bi-house"></i>
+            </div>
+            <div class="btnSettigns" ng-click ="goTo('/settings')">
+                <i class="bi bi-gear"></i>
+            </div>
+        </div>
+        
+    </div>
+
+</div>

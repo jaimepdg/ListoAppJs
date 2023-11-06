@@ -1,0 +1,14 @@
+.newFormItem{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.newForm{
+    gap: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+input[type="checkbox"]{
+    width: 2.5rem;
+    height: 2.5rem;
+}
