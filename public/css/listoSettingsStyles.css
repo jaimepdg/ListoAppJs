@@ -1,0 +1,18 @@
+.sLista li{
+    margin: rem 0;
+
+    
+}
+.sLista li .bi{
+    font-size: 9rem;
+    margin: 0;
+}
+.sLista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sLista p{
+    margin-bottom:9rem ;
+}

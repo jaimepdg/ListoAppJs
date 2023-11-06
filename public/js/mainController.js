@@ -1,5 +1,6 @@
 var app = angular.module('myApp', ["ngRoute",'firebase']);
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyBFBORUoZFZgZlJxSbOR0y9BNM_lqN5Cgc",
     authDomain: "listogames-a60c5.firebaseapp.com",

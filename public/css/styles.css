@@ -7,25 +7,27 @@
     --accent-color: #ec407a;
     
 }
-html{
+html, body{
+    height: 100%;
     font-family:  Arial, sans-serif;
+    background-color: rgb(90, 90, 90);
     
     
 
 }
 body{
-    padding: 0;
+    
     margin: 0;
 }
 .botBar{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: auto;
+    height: 10rem;
     width: 100%;
     font-family:  Arial, sans-serif;
     background-color: rgb(117, 117, 117);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -44,13 +46,15 @@ body{
     cursor: pointer;
 }
 .mainContainer{
+    padding: 20rem 0;
     display: flex;
+    overflow-y: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgb(90, 90, 90);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     font-size: 4rem;
     color: white;
 }
@@ -58,11 +62,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: auto;
+    height:10rem;
     width: 100%;
     font-family:  Arial, sans-serif;
-    background-color: rgb(117, 117, 117);
-    position: absolute;
+    background-color: rgba(78, 78, 78, 0.863);
+    box-shadow: 0px 12px 30px -9px rgba(0,0,0,0.75);
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -118,13 +123,14 @@ body{
   .navBar{
     display: flex;
     width: 100%;
+    height: 10rem;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    padding: 2rem 0; 
+    box-shadow: 0px -3px 17px -2px rgba(0,0,0,0.75);
     border-radius: 3000px 3000px 0 0;
-    background-color: rgb(78, 78, 78);
+    background-color: rgba(78, 78, 78, 0.863);
 
 
   }
@@ -144,4 +150,9 @@ body{
     align-items: center;
     justify-content: center;
     background-color: rgb(86, 153, 86);
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    height: 100%;
   }

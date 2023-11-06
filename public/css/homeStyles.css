@@ -1,0 +1,26 @@
+.hAddBtn{
+    font-size: 5rem;
+    margin-right: 2.5rem;
+}
+li h1 {
+    
+    margin-top: 0;
+}
+.juegoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    border-top: solid 1px gray;
+    box-shadow: 0px -3px 17px -2px rgba(0,0,0,0.36);
+
+}
+.juegoContainer h1{
+    font-size:7rem;
+    margin-bottom: 0;
+}
+.juegoContainer p{
+    font-size: 2rem;
+    margin: 0 0 2rem 0;
+}
