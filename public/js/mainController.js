@@ -32,6 +32,11 @@ app.config(function($routeProvider, $locationProvider) {
         controller: "listoSettingsController",
         
     })
+    .when("/categorias", {
+      templateUrl: "views/categorias.html",
+      controller: "categoriasController",
+      
+  })
     .when("/newGame", {
         templateUrl: "views/newGameForm.html",
         controller: "newGameFormController",
@@ -50,5 +55,20 @@ app.service('myService', function() {
         myVariable = value;
       }
     };
+    
 });
-  
+
+app.service('JuegoService', function() {
+  var juego = {};
+
+  return {
+      getJuego: function() {
+          return juego;
+          
+      },
+      setJuego: function(value) {
+          juego = value;
+      }
+  };
+});
+

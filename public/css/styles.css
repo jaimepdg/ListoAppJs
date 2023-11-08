@@ -46,7 +46,7 @@ body{
     cursor: pointer;
 }
 .mainContainer{
-    padding: 20rem 0;
+    padding: 11rem 0;
     display: flex;
     overflow-y: auto;
     flex-direction: column;

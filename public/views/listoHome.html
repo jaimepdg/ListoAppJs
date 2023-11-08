@@ -2,19 +2,32 @@
 <div ng-controller = "listoHomeController">
     <div class="topBar">
         <div class="HomeTitulo"><h1>{{title}}</h1></div>
-        <i class="bi bi-plus-circle-fill hAddBtn" ng-click = "goTo('/newGame')"></i>
+        <div style="gap: 3rem; display: flex;">
+            <i class="bi bi-search" ng-click="showBuscador = !showBuscador"></i>
+            <i class="bi bi-plus-circle-fill hAddBtn"ng-click="esNuevo()" ng-click = "goTo('/newGame')"></i>
+        </div>
+        
     </div>
     <div class="mainContainer">
+        <input type="text" placeholder="Buscar Juego" ng-show="showBuscador" ng-model="busqueda">
 
-        <ul ng-repeat = "juego in juegos">
+        <div class="juegosLista" ng-repeat = "juego in juegos | filter:{nombreJuego: busqueda}">
             <div class="juegoContainer">
-                <img src="" alt="">
-                <h1>{{juego.nombreJuego}}</h1>
-                <p>Jugadores: {{juego.jugadores}}</p>
-                <p>Tiempo: {{juego.tiempo}}</p>
-                <p>Solitario: {{juego.solitario}}</p>
+                <div class="div1"> <h1>{{juego.nombreJuego}}</h1></div>
+                <div class="estrellas" ng-init="estrellas = [1, 2, 3, 4, 5]">
+                    <span ng-repeat="estrella in estrellas" ng-click="valorar(juego.nombreJuego, estrella)">
+                        <i class="bi bi-star-fill" ng-class="{'bi-star-fill-colored': estrella <= juego.valoracion}"></i>
+                    </span>
+                </div>
+                <div class="div3"><p>Categoría</p> </div>
+                <div class="div4"><p>Jugadores: {{juego.jugadores}}</p></div>
+                <div class="div5"><p>Es solitario: {{juego.solitario ? '✅' : '❌'}}</p></div>
+                <div class="div7"><p>Tiempo: {{juego.tiempo}} min</p></div>
+                <div class="div6"><h6>Descripción:</h3><p>{{juego.descripcion}}</p></div>
             </div>
-        </ul>
+            <i class="bi bi-pencil-fill" ng-click="editarJuego(juego)"></i>
+            
+        </div>
     
         
 

@@ -1,0 +1,45 @@
+
+<div ng-controller = "categoriasController">
+    <div class="topBar">
+        <div class="HomeTitulo"><h1>{{title}}</h1></div>
+        <i class="bi bi-plus-circle-fill hAddBtn" ng-click="addNewItem()" ng-show="showAddBtn"></i>
+        <div class="backBtn"><a href="#/settings"><i class="bi bi-arrow-left"></i></a></div>
+    </div>
+    
+
+
+    <div class="catMainContainer">
+        <ul>
+            <li ng-repeat="categoria in categorias">{{categoria.nombre}}</li>
+          </ul>
+          
+
+        <div class="formNewItem" ng-show="showNewItem">
+            <p>Añadir item:</p>
+            <input type="text" ng-model="categoria">
+            <div class="newItemButtons">
+                <div class="bi bi-x-circle" ng-click="cancelNewItem()"></div>
+                <div class="bi bi-check-circle" ng-click="saveNewItem()"></div>
+                
+            </div>
+            
+          </div>
+          
+    </div>
+
+    <div class="navBar">
+        <div class="btnContainer">
+            <div class="btnLista" ng-click ="goTo('/list')">
+                <i class="bi bi-card-checklist"></i>
+            </div>
+            <div class="btnHome" ng-click ="goTo('/')">
+                <i class="bi bi-house"></i>
+            </div>
+            <div class="btnSettigns" ng-click ="goTo('/settings')">
+                <i class="bi bi-gear"></i>
+            </div>
+        </div>
+        
+    </div>
+
+</div>

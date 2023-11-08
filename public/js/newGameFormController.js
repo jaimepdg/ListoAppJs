@@ -1,6 +1,6 @@
-app.controller('newGameFormController', function($scope, myService, $location, $firebaseArray) {
+app.controller('newGameFormController', function($scope, myService, JuegoService, $location, $firebaseArray) {
   myService.setVariable('Nuevo Juego');
-
+  
   $scope.title = myService.getVariable()
 
   var ref = firebase.database().ref().child("juegos");
@@ -25,6 +25,7 @@ app.controller('newGameFormController', function($scope, myService, $location, $
       jugadores: $scope.njugadores,
       tiempo: $scope.tiempo,
       solitario: $scope.solitario || false,
+      descripcion : $scope.descripcion,
 
     };
     var nombreJuego = $scope.nombre;
@@ -34,5 +35,18 @@ app.controller('newGameFormController', function($scope, myService, $location, $
     console.log("Se debería haber subido a la bd")
   };
 
- 
+ var juego = JuegoService.getJuego();
+ if(juego != undefined){
+  $scope.nombre = juego.nombreJuego;
+  $scope.njugadores = juego.jugadores;
+  $scope.tiempo = juego.tiempo;
+  $scope.solitario = juego.solitario;
+  $scope.descripcion = juego.descripcion;
+  $scope.title = typeof juego.nombreJuego !== "undefined" ? "Editar Juego" : "Nuevo Juego";
+ }
+  
+
+  
+  
+
 });

@@ -1,4 +1,4 @@
-app.controller('listoHomeController', function($scope, $location, myService, $firebaseArray) {
+app.controller('listoHomeController', function($scope, $location,JuegoService, myService, $firebaseArray) {
 
     $scope.showAddBtn = true
     myService.setVariable('Home');
@@ -12,4 +12,23 @@ app.controller('listoHomeController', function($scope, $location, myService, $fi
     }
     var ref = firebase.database().ref().child("juegos");
     $scope.juegos = $firebaseArray(ref);
+
+    $scope.editarJuego = function(juego) {
+        JuegoService.setJuego(juego);
+        $location.path('/newGame');
+
+    };
+    $scope.esNuevo = function(){
+        JuegoService.setJuego(undefined)
+        $location.path('/newGame');
+    }
+$scope.valoracion = 0; // Valoración inicial
+
+$scope.valorar = function(nombreJuego, estrella) {
+    $scope.valoracion = estrella; // Actualizar la valoración
+
+    var ref = firebase.database().ref().child('juegos/' + nombreJuego)
+    ref.update({ valoracion: estrella });
+};
+
 });
