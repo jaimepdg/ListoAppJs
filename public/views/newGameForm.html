@@ -10,22 +10,31 @@
     <div class="mainContainer">
         <div class="newForm">
             <div class="newFormItem">
-                Nombre
+                <h1 class="newTitle">Nombre</h1>
                 <input ng-model = "nombre" ng-model = "nombrejuego" type="text">
             </div>
             <div class="newFormItem">
-                Nº Jugadores {{njugadores}}
+                <h1 class="newTitle">Nº Jugadores  {{njugadores}}</h1>
                 <input ng-model="njugadores" ng-change ="getSliderValue()"  type="range" min="1" max="20" value="1">
             </div><div class="newFormItem">
-                Duración
+                
+                <h1 class="newTitle">Duración</h1>
                 <input ng-model = "tiempo" type="number" placeholder="Minutos">
             </div>
             <div class="newFormItem">
                 <div>Solitario <input ng-model = "solitario"  type="checkbox"></div>
             </div>
             <div class="newFormItem">
-                Descripción
-                <input ng-model = "descripcion" type="text">
+                <h1 class="newTitle">Categoría</h1>
+                <select ng-model="selectedCategory" ng-options="key as key for (key, value) in categorias">
+                  </select>
+            </div>
+
+            
+            <div class="newFormItem">
+                <h1 class="newTitle">Descripción</h1>
+                <textarea class="desc" ng-model = "descripcion" rows="4" cols="50" placeholder="Escribe la descripción">
+                </textarea>
             </div>
             
             <div ng-click="addJuego()"class="newBtnGuardar">Guardar</div>
